@@ -22,3 +22,25 @@ for(i = 0; i < num_bubbles; i++) {
     bubble_div.appendChild(bubble);
     bubbles.appendChild(bubble_div);
 }
+
+// text effect
+document.fonts.ready.then(() => {
+    let water_text = new Blotter.Text(" FISH TANK *", {
+        family: "'Under Water'",
+        size: 70,
+        weight: 100,
+        fill: "#00b3ac"
+    });
+    
+    let wave = new Blotter.LiquidDistortMaterial();
+    wave.uniforms.uSpeed.value = 0.6;
+    wave.uniforms.uVolatility.value = 0.1;
+    wave.uniforms.uSeed.value = 0.5;
+    
+    let blotter = new Blotter(wave, {
+        texts: water_text
+    });
+    let get_element = document.getElementById("water-text");
+    let element = blotter.forText(water_text);
+    element.appendTo(get_element);
+});
