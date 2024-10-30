@@ -3,10 +3,10 @@
     src: url(../fonts/underwater-love.regular.ttf);
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 /* body */
-
 html, body {
     height: 100%;
     margin: 0;
